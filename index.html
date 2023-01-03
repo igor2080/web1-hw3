@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Enter your name, surname and student id number here
+-->
+<html>
+
+<head>
+  <title>Elections Activity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="activities.js"></script>
+  <script type="text/javascript" src="homework3.js"></script>
+  <style>
+    table,
+    td,
+    th {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    #vote-from-error,
+    #vote-until-error {
+      color: #e38080;
+    }
+
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(7) {
+      text-align: right;
+    }
+
+    #vote-from:invalid,
+    #vote-until:invalid {
+      background-color: #e38080;
+    }
+
+    #vote-from:invalid+#vote-from-error,
+    #vote-until:invalid+#vote-until-error {
+      display: inline !important;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Elections Activity</h1>
+  <div>
+    <div>
+      <label for="region-list">Ŗegion:</label>
+      <select id="region-list">
+        <option value="">All</option>
+      </select>
+    </div>
+    <div>
+      <label for="polling-list">Polling station:</label>
+      <select id="polling-list"></select>
+    </div>
+    <div>
+      <label for="vote-from">Voters from:</label>
+      <input type="text" id="vote-from" pattern="\d+">
+      <span style="display: none;" id="vote-from-error">Invalid input entered (invalid input is ignored)</span>
+    </div>
+    <div>
+      <label for="vote-until">Voters until:</label>
+      <input type="text" id="vote-until" pattern="\d+">
+      <span style="display: none;" id="vote-until-error">Invalid input entered (invalid input is ignored)</span>
+    </div>
+    <div>
+      <label for="search">Polling station search:</label>
+      <input type="search" id="search">
+    </div>
+    <div>
+      <label>Display: </label>
+      <span>
+        <label for="voterCount">Total</label><input type="checkbox" name="voterCount" id="voterCount">
+        <label for="electionDayVoterCount">Election day</label><input type="checkbox" name="electionDayVoterCount"
+          id="electionDayVoterCount">
+      </span>
+    </div>
+    <div id="buttons">
+      <button id="show-stats">Show statistics</button>
+    </div>
+    <table id="stat-table">
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
